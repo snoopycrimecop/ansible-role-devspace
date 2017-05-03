@@ -48,22 +48,7 @@
     - pip
     - passlib
     - pyyaml
-    # see https://github.com/ansible/ansible/issues/20380
     - docker-compose==1.9.0
-
-- name: TODO install docker-py
-  become: yes
-  pip:
-    name: "{{ item }}"
-    state: latest
-  with_items:
-    # see https://github.com/docker/compose/issues/4344
-    - docker==2.0.1
-    # see https://github.com/ansible/ansible/issues/17495
-    - docker-py==1.9.0
-    # Same as above
-    - requests<2.12.2
-
 
 - name: clone devspace
   become: yes
