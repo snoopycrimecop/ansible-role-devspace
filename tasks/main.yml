@@ -111,19 +111,6 @@
     path: "{{ devspace_home }}/slave/.ssh/known_hosts"
     mode: 0700
 
-- name: change USER_ID
-  become: yes
-  become_user: "{{ devspace_user }}"
-  replace:
-    dest: "{{ devspace_home }}/{{ item }}"
-    regexp: '^ARG USER_ID=1000'
-    replace: 'ARG USER_ID={{ devspace_user_id }}' # how to find out UID?
-  with_items:
-    - nginx/Dockerfile
-    - slave/Dockerfile
-    - server/Dockerfile
-    - web/Dockerfile
-
 - name: set basic auth password for nginx proxy
   become: yes
   lineinfile:
@@ -192,10 +179,6 @@
 # end of config
 
 - name: Devspace up
-  environment:
-    USER_ID: "{{ devspace_user_id }}"
-    JENKINS_USERNAME: "{{ devspace_jenkins_username }}"
-    JENKINS_PASSWORD: "{{ devspace_jenkins_password }}"
   become: yes
   become_user: "{{ devspace_user }}"
   environment:
