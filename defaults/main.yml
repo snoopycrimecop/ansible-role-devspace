@@ -20,7 +20,6 @@ devspace_user: omero
 
 # devspace user id
 devspace_user_id: "1001"
-devspace_compose: "v1"
 
 # path where devspace will be installed
 devspace_home: /home/{{ devspace_user }}/devspace
