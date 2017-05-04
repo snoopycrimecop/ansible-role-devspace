@@ -1,9 +1,5 @@
 ---
 
-# Force Docker to use the MTU set by the main IPV4 interface.
-# This may be necessary on virtualised hosts, see comment in `docker/defaults/main.yml`.
-docker_use_ipv4_nic_mtu: True
-
 # path to snoopy keys like "/path/to/snoopy_keys"
 snoopy_dir_path: ""
 
