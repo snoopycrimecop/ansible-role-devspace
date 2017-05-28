@@ -69,7 +69,7 @@
   become: yes
   become_user: "{{ devspace_user }}"
   docker_service:
-    project_src: "{{ devspaceci_home }}"
+    project_src: "{{ devspace_home }}"
     state: absent
   when: gitstatus.changed
 
