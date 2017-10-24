@@ -9,7 +9,7 @@ Role Variables
 
 All variables are optional, see `defaults/main.yml` for the full list
 
-- `snoopy_dir_path`: path to ssh keys and gitconfig like `/path/to/snoopy_keys`. See https://github.com/openmicroscopy/devspace/blob/master/README.md for more details.
+- `configuration_dir_path`: path to SSH and Git configuration files e.g. `/path/to/configuration`. See https://github.com/openmicroscopy/devspace/blob/master/README.md for more details.
 
 - `devspace_git_repo`:  devspace git source
 - `devspace_git_repo_version`: github branch or tag
