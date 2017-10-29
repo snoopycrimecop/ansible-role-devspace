@@ -95,8 +95,8 @@
      mode: 0700
   with_items:
     - { srcfile: ".ssh/config", dest: ".ssh/config" }
-    - { srcfile: ".ssh/id_rsa", dest: ".ssh/id_rsa" }
-    - { srcfile: ".ssh/id_rsa.pub", dest: ".ssh/id_rsa.pub" }
+    - { srcfile: ".ssh/id__gh_rsa", dest: ".ssh/id_gh_rsa" }
+    - { srcfile: ".ssh/id_gh_rsa.pub", dest: ".ssh/id_gh_rsa.pub" }
     - { srcfile: ".gitconfig", dest: ".gitconfig" }
   when: configuration_dir_path|length>0
 
