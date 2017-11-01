@@ -1,7 +1,7 @@
 ---
 
 # path to SSH and Git configuration files e.g. "/path/to/configuration"
-connfiguration_dir_path: ""
+configuration_dir_path: ""
 
 # devspace source
 devspace_git_repo: "https://github.com/openmicroscopy/devspace.git"
