@@ -48,7 +48,7 @@
     - pip
     - passlib
     - pyyaml
-    - docker-compose==1.9.0
+    - docker-compose
 
 - name: clone devspace
   become: yes
