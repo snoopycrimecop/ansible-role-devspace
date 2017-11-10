@@ -88,7 +88,6 @@
     - { srcfile: ".ssh/id_gh_rsa", dest: ".ssh/id_gh_rsa" }
     - { srcfile: ".ssh/id_gh_rsa.pub", dest: ".ssh/id_gh_rsa.pub" }
     - { srcfile: ".gitconfig", dest: ".gitconfig" }
-  when: configuration_dir_path|length>0
 
 - name: known_hosts
   become: yes
@@ -161,10 +160,16 @@
     chdir: "{{ devspace_home }}"
     creates: "{{ devspace_home }}/nginx/sslcert"
 
-- name: rename to {{ devspace_omero_branch }} for {{ github_user }}...
+- name: find github user
+  set_fact:
+    git_user: "{{ item.replace('\t', '').split('=')[1] }}"
+  when: "'user=' in item.replace(' ', '')"
+  with_lines: "cat {{ configuration_dir_path }}/.gitconfig"
+
+- name: rename to {{ devspace_omero_branch }} for {{ git_user }}...
   become: yes
   become_user: "{{ devspace_user }}"
-  command: "{{ devspace_home }}/rename.py {{ devspace_omero_branch }} --user {{ github_user }}"
+  command: "{{ devspace_home }}/rename.py {{ devspace_omero_branch }} --user {{ git_user }}"
   args:
     chdir: "{{ devspace_home }}"
 

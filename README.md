@@ -9,8 +9,7 @@ Role Variables
 
 All variables are optional, see `defaults/main.yml` for the full list
 
-- `configuration_dir_path`: path to SSH and Git configuration files usually `~`. See https://github.com/openmicroscopy/devspace/blob/master/README.md for more details.
-- `github_user`: The login name of the GitHub account associated to the SSH and Git configuration files
+- `configuration_dir_path`: path to SSH and Git configuration files. See https://github.com/openmicroscopy/devspace/blob/master/README.md for more details.
 
 - `devspace_git_repo`:  devspace git source
 - `devspace_git_repo_version`: github branch or tag
