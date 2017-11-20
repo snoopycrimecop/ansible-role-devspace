@@ -1,5 +1,5 @@
----
 sudo: required
+
 language: python
 
 services:
@@ -8,8 +8,8 @@ services:
 install:
   - pip install ome-ansible-molecule-dependencies
 
-script:
-  - molecule test
+# script:
+#  - molecule test
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
