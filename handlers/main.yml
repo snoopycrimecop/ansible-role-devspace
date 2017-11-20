@@ -5,6 +5,7 @@
     USER_ID: "{{ devspace_user_id }}"
     JENKINS_USERNAME: "{{ devspace_jenkins_username }}"
     JENKINS_PASSWORD: "{{ devspace_jenkins_password }}"
+    DOCKER_IPV4_MTU: "{{ ansible_default_ipv4.mtu }}"
   become: yes
   become_user: "{{ devspace_user }}"
-  include: "{{ devspace_handler_tasks }}"
+  import_tasks: "devspace-runtime.yml"

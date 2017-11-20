@@ -1,11 +1,10 @@
 ---
-# Setup a devspace
 
 - name: Devspace down
   docker_service:
     project_src: "{{ devspace_home }}"
     state: absent
-  when: devspace_force_restart
+  when: gitstatus.changed
 
 - name: Devspace up
   docker_service:

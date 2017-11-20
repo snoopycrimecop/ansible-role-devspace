@@ -11,6 +11,4 @@ galaxy_info:
   galaxy_tags: []
 
 dependencies:
-- role: openmicroscopy.upgrade-distpackages
-- role: openmicroscopy.docker
 - role: openmicroscopy.versioncontrol-utils

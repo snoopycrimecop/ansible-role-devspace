@@ -1,11 +1,7 @@
 ---
 
-# Force Docker to use the MTU set by the main IPV4 interface.
-# This may be necessary on virtualised hosts, see comment in `docker/defaults/main.yml`.
-docker_use_ipv4_nic_mtu: True
-
-# path to snoopy keys like "/path/to/snoopy_keys"
-snoopy_dir_path: ""
+# path to SSH and Git configuration files e.g. "/path/to/configuration"
+configuration_dir_path: ""
 
 # devspace source
 devspace_git_repo: "https://github.com/openmicroscopy/devspace.git"
@@ -20,7 +16,6 @@ devspace_user: omero
 
 # devspace user id
 devspace_user_id: "1001"
-devspace_compose: "v1"
 
 # path where devspace will be installed
 devspace_home: /home/{{ devspace_user }}/devspace
@@ -30,10 +25,6 @@ devspace_openstack_ip: "{{ ansible_host }}"
 
 # rename to:
 devspace_omero_branch: develop
-
-devspace_handler_tasks: "devspace-runtime.yml"
-
-devspace_force_restart: true
 
 # SECURITY
 # jenkins admin credentials:
