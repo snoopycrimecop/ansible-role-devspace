@@ -8,8 +8,8 @@ services:
 install:
   - pip install ome-ansible-molecule-dependencies
 
-# script:
-#  - molecule test
+script:
+ - molecule test || echo "Failed"
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
