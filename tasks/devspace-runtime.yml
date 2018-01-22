@@ -11,8 +11,8 @@
     project_src: "{{ devspace_home }}"
     state: present
     scale:
-        seleniumfirefox: 5
-        seleniumchrome: 5
+        seleniumfirefox: "{{number_instance}}"
+        seleniumchrome: "{{number_instance}}"
 
   register: output
 
@@ -31,9 +31,4 @@
     - "seleniumhub.devspace_seleniumhub_1.state.running"
     - "seleniumfirefox.devspace_seleniumfirefox_{{item}}.state.running"
     - "seleniumchrome.devspace_seleniumchrome_{{item}}.state.running"
-  with_items:
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
+  with_sequence: count="{{number_instance}}"
