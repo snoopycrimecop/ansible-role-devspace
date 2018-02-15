@@ -10,6 +10,9 @@
   docker_service:
     project_src: "{{ devspace_home }}"
     state: present
+    scale:
+        seleniumfirefox: "{{number_instance}}"
+        seleniumchrome: "{{number_instance}}"
 
   register: output
 
@@ -26,5 +29,6 @@
     - "nginxjenkins.devspace_nginxjenkins_1.state.running"
     - "redis.devspace_redis_1.state.running"
     - "seleniumhub.devspace_seleniumhub_1.state.running"
-    - "seleniumfirefox.devspace_seleniumfirefox_1.state.running"
-    - "seleniumchrome.devspace_seleniumchrome_1.state.running"
+    - "seleniumfirefox.devspace_seleniumfirefox_{{item}}.state.running"
+    - "seleniumchrome.devspace_seleniumchrome_{{item}}.state.running"
+  with_sequence: count="{{number_instance}}"
