@@ -17,18 +17,3 @@
   register: output
 
 - debug: var=output
-
-- assert:
-    that:
-    - "jenkins.devspace_jenkins_1.state.running"
-    - "pg.devspace_pg_1.state.running"
-    - "testintegration.devspace_testintegration_1.state.running"
-    - "omero.devspace_omero_1.state.running"
-    - "web.devspace_web_1.state.running"
-    - "nginx.devspace_nginx_1.state.running"
-    - "nginxjenkins.devspace_nginxjenkins_1.state.running"
-    - "redis.devspace_redis_1.state.running"
-    - "seleniumhub.devspace_seleniumhub_1.state.running"
-    - "seleniumfirefox.devspace_seleniumfirefox_{{item}}.state.running"
-    - "seleniumchrome.devspace_seleniumchrome_{{item}}.state.running"
-  with_sequence: count="{{number_instance}}"
